@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane prefHeight="600.0" prefWidth="770.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MyController">
+   <tabs>
+      <Tab onSelectionChanged="#tab1selected" text="Personal Information">
+         <content>
+            <ScrollPane hbarPolicy="NEVER">
+               <content>
+                  <AnchorPane prefHeight="1450.0" prefWidth="770.0">
+                     <children>
+                        <Label layoutX="140.0" layoutY="30.0" text="Email*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="138.0" layoutY="70.0" text="Name*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="114.0" layoutY="170.0" prefHeight="34.0" prefWidth="76.0" text="Address of">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="126.0" layoutY="350.0" text="Mobile*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="94.0" layoutY="401.0" text="PhD Stream*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="28.0" layoutY="595.0" text="PhD Area Preference 3">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="28.0" layoutY="555.0" text="PhD Area Preference 2">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="28.0" layoutY="515.0" text="PhD Area Preference 1*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="58.0" layoutY="120.0" text="Enrollment Number*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <TextField fx:id="email" layoutX="200.0" layoutY="25.0" prefHeight="25.0" prefWidth="403.0" promptText="Ex : xyz@gmail.com" />
+                        <Label layoutX="74.0" layoutY="187.0" prefHeight="34.0" prefWidth="111.0" text="Correspondence*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <TextField fx:id="name" layoutX="200.0" layoutY="65.0" prefHeight="25.0" prefWidth="403.0" promptText="Ex: Harish Fulara" />
+                        <TextField fx:id="eno" disable="true" editable="false" layoutX="200.0" layoutY="115.0" prefHeight="25.0" prefWidth="403.0" promptText="This is an auto-generated field" />
+                        <TextField fx:id="mobile" layoutX="200.0" layoutY="345.0" prefHeight="25.0" prefWidth="403.0" promptText="Note : Provide a valid 10 digit mobile number" />
+                        <RadioButton fx:id="stream_cs" layoutX="200.0" layoutY="400.0" mnemonicParsing="false" onAction="#csOnAction" text="Computer Science">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="stream" />
+                           </toggleGroup>
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></RadioButton>
+                        <RadioButton fx:id="stream_ece" layoutX="200.0" layoutY="430.0" mnemonicParsing="false" onAction="#eceOnAction" text="Electronics and Communication" toggleGroup="$stream">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></RadioButton>
+                        <RadioButton fx:id="stream_cb" layoutX="200.0" layoutY="460.0" mnemonicParsing="false" onAction="#cbOnAction" text="Computational Biology" toggleGroup="$stream">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></RadioButton>
+                        <Label layoutX="115.0" layoutY="650.0" text="Gender*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="104.0" layoutY="720.0" text="Category*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="45.0" layoutY="791.0" text="Physically Disabled*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="84.0" layoutY="830.0" text="Date of Birth*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <RadioButton fx:id="male" layoutX="200.0" layoutY="650.0" mnemonicParsing="false" text="Male">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="gender" />
+                           </toggleGroup>
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></RadioButton>
+                        <RadioButton fx:id="female" layoutX="200.0" layoutY="680.0" mnemonicParsing="false" text="Female" toggleGroup="$gender">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></RadioButton>
+                        <RadioButton fx:id="sc" layoutX="200.0" layoutY="750.0" mnemonicParsing="false" text="SC">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="category" />
+                           </toggleGroup>
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></RadioButton>
+                        <RadioButton fx:id="general" layoutX="200.0" layoutY="720.0" mnemonicParsing="false" text="General" toggleGroup="$category">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></RadioButton>
+                        <RadioButton fx:id="st" layoutX="254.0" layoutY="750.0" mnemonicParsing="false" text="ST" toggleGroup="$category">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></RadioButton>
+                        <RadioButton fx:id="obc" layoutX="308.0" layoutY="750.0" mnemonicParsing="false" text="OBC" toggleGroup="$category">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></RadioButton>
+                        <RadioButton fx:id="pd_no" layoutX="254.0" layoutY="790.0" mnemonicParsing="false" text="NO">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="pd" />
+                           </toggleGroup>
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></RadioButton>
+                        <RadioButton fx:id="pd_yes" layoutX="200.0" layoutY="790.0" mnemonicParsing="false" text="YES" toggleGroup="$pd">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></RadioButton>
+                        <DatePicker fx:id="dob" layoutX="200.0" layoutY="828.0" promptText="MM/DD/YYYY" />
+                        <Label layoutX="40.0" layoutY="870.0" text="Children/War Widows ">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="40.0" layoutY="885.0" text="of Defence Personnel ">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="65.0" layoutY="900.0" text="killed/Disabled in ">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="122.0" layoutY="915.0" text="Action*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="76.0" layoutY="950.0" text="Father's Name*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="97.0" layoutY="990.0" text="Nationality*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="99.0" layoutY="1200.0" text="Pin Code*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="43.0" layoutY="1030.0" text="Permanent Address*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <TextField fx:id="father_name" layoutX="200.0" layoutY="945.0" prefHeight="25.0" prefWidth="403.0" promptText="Ex: Ramesh Chandra" />
+                        <TextField fx:id="pin" layoutX="200.0" layoutY="1195.0" prefHeight="25.0" prefWidth="403.0" promptText="Ex: 110092" />
+                        <RadioButton fx:id="war_yes" layoutX="200.0" layoutY="889.0" mnemonicParsing="false" text="Yes">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="war" />
+                           </toggleGroup>
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></RadioButton>
+                        <RadioButton fx:id="war_no" layoutX="255.0" layoutY="889.0" mnemonicParsing="false" text="No" toggleGroup="$war">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></RadioButton>
+                        <Button layoutX="200.0" layoutY="1300.0" mnemonicParsing="false" onAction="#save1onAction" text="Save">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Button>
+                        <Text fx:id="prompt1" layoutX="200.0" layoutY="1370.0" strokeType="OUTSIDE" strokeWidth="0.0" visible="false">
+                           <font>
+                              <Font name="Georgia" size="16.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#2b00ff" layoutX="200.0" layoutY="1270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note: Fields marked as * are mandatory">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <ComboBox fx:id="pref1" layoutX="200.0" layoutY="510.0" prefHeight="25.0" prefWidth="403.0" promptText="Depending on selected PhD stream" />
+                        <ComboBox fx:id="pref2" layoutX="200.0" layoutY="550.0" prefWidth="403.0" promptText="--Optional--" />
+                        <ComboBox fx:id="pref3" layoutX="200.0" layoutY="590.0" prefWidth="403.0" promptText="--Optional--" />
+                        <ComboBox fx:id="nationality" layoutX="200.0" layoutY="985.0" prefWidth="403.0" promptText="------------" />
+                        <Text fx:id="wrong1" fill="#c90505" layoutX="621.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <Text fx:id="wrong2" fill="#c90505" layoutX="621.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <Text fx:id="wrong3" fill="#c90505" layoutX="621.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <Text fx:id="wrong4" fill="#c90505" layoutX="621.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <Text fx:id="wrong5" fill="#c90505" layoutX="621.0" layoutY="413.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <Text fx:id="wrong6" fill="#c90505" layoutX="621.0" layoutY="527.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <Text fx:id="wrong7" fill="#c90505" layoutX="621.0" layoutY="671.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <Text fx:id="wrong8" fill="#c90505" layoutX="621.0" layoutY="755.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <Text fx:id="wrong9" fill="#c90505" layoutX="621.0" layoutY="803.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <Text fx:id="wrong10" fill="#c90505" layoutX="621.0" layoutY="902.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <Text fx:id="wrong11" fill="#c90505" layoutX="621.0" layoutY="962.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <Text fx:id="wrong12" fill="#c90505" layoutX="621.0" layoutY="1002.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <Text fx:id="wrong13" fill="#c90505" layoutX="621.0" layoutY="1042.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <Text fx:id="wrong14" fill="#c90505" layoutX="621.0" layoutY="1212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <Text fx:id="wrong0" fill="#c90505" layoutX="621.0" layoutY="845.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <TextField fx:id="c_addr1" layoutX="200.0" layoutY="187.0" prefHeight="25.0" prefWidth="403.0" promptText="Address Line 1" />
+                        <TextField fx:id="c_addr2" layoutX="200.0" layoutY="232.0" prefHeight="25.0" prefWidth="403.0" promptText="Address Line 2" />
+                        <TextField fx:id="c_addr3" layoutX="200.0" layoutY="282.0" prefHeight="25.0" prefWidth="403.0" promptText="Address Line 3" />
+                        <TextField fx:id="p_addr1" layoutX="200.0" layoutY="1038.0" prefHeight="25.0" prefWidth="403.0" promptText="Address Line 1" />
+                        <TextField fx:id="p_addr2" layoutX="200.0" layoutY="1086.0" prefHeight="25.0" prefWidth="403.0" promptText="Address Line 2" />
+                        <TextField fx:id="p_addr3" layoutX="200.0" layoutY="1139.0" prefHeight="25.0" prefWidth="403.0" promptText="Address Line 3" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </content>
+      </Tab>
+      <Tab onSelectionChanged="#tab2selected" text="Education Information">
+         <content>
+            <ScrollPane hbarPolicy="NEVER">
+               <content>
+                  <AnchorPane prefWidth="770.0">
+                     <children>
+                        <Label layoutX="110.0" layoutY="85.0" text="Xth Board*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="109.0" layoutY="125.0" text="Xth Marks*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="52.0" layoutY="225.0" text="Year of Passing Xth*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="98.0" layoutY="275.0" text="XIIth Board*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="75.0" layoutY="325.0" text="XIIth Marks (%)*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="41.0" layoutY="380.0" text="Year of Passing XIIth*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Text layoutX="50.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schooling Information" underline="true">
+                           <font>
+                              <Font name="Century" size="20.0" />
+                           </font></Text>
+                        <Text layoutX="50.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Graduation Information" underline="true">
+                           <font>
+                              <Font name="Century" size="20.0" />
+                           </font></Text>
+                        <TextField layoutX="210.0" layoutY="320.0" prefWidth="400.0" promptText="Note : Upto 2 decimal places. Ex: 95.25" fx:id="xiimark" />
+                        <TextField layoutX="325.0" layoutY="120.0" promptText="Upto 2 decimal places" fx:id="xmark1" />
+                        <RadioButton layoutX="210.0" layoutY="125.0" mnemonicParsing="false" onAction="#xcgpaonAction" text="CGPA" fx:id="xcgpa">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="marks" />
+                           </toggleGroup>
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton layoutX="210.0" layoutY="170.0" mnemonicParsing="false" onAction="#xpercentageonAction" text="Percentage" toggleGroup="$marks" fx:id="xpercentage">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></RadioButton>
+                        <TextField layoutX="325.0" layoutY="165.0" promptText="Upto 2 decimal places" fx:id="xmark2" />
+                        <Label layoutX="114.0" layoutY="495.0" text="Degree*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="26.0" layoutY="545.0" text="Department/Discipline*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="59.0" layoutY="595.0" text="Name of College*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="43.0" layoutY="645.0" text="Name of University*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="128.0" layoutY="695.0" text="City*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <TextField fx:id="collegename" layoutX="210.0" layoutY="590.0" prefHeight="25.0" prefWidth="403.0" />
+                        <TextField fx:id="universityname" layoutX="210.0" layoutY="640.0" prefHeight="25.0" prefWidth="403.0" />
+                        <TextField fx:id="collegecity" layoutX="210.0" layoutY="690.0" prefHeight="25.0" prefWidth="403.0" />
+                        <Label layoutX="119.0" layoutY="745.0" text="State*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="38.0" layoutY="800.0" text="Year of Graduation*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="110.0" layoutY="860.0" text="Marks*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Label>
+                        <RadioButton fx:id="gradcgpa" layoutX="210.0" layoutY="860.0" mnemonicParsing="false" onAction="#gradcgpaonAction" text="CGPA">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="gmarks" />
+                           </toggleGroup>
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></RadioButton>
+                        <RadioButton fx:id="gradpercentage" layoutX="210.0" layoutY="905.0" mnemonicParsing="false" onAction="#gradpercentageonAction" text="Percentage" toggleGroup="$gmarks">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></RadioButton>
+                        <TextField fx:id="gradmark1" layoutX="320.0" layoutY="855.0" prefHeight="25.0" prefWidth="185.0" promptText="Upto 2 decimal places" />
+                        <TextField fx:id="gradmark2" layoutX="320.0" layoutY="900.0" prefHeight="25.0" prefWidth="185.0" promptText="Upto 2 decimal places" />
+                        <ComboBox layoutX="210.0" layoutY="220.0" prefHeight="25.0" prefWidth="400.0" promptText="---Mandatory---" fx:id="xyear" />
+                        <ComboBox layoutX="210.0" layoutY="375.0" prefWidth="400.0" promptText="---Mandatory---" fx:id="xiiyear" />
+                        <ComboBox fx:id="outof2" layoutX="555.0" layoutY="855.0" prefHeight="25.0" prefWidth="58.0" promptText="4" />
+                        <ComboBox fx:id="outof1" layoutX="553.0" layoutY="120.0" prefHeight="25.0" prefWidth="55.0" promptText="4" />
+                        <ComboBox fx:id="gradstate" layoutX="210.0" layoutY="740.0" prefWidth="400.0" promptText="---Mandatory---" />
+                        <ComboBox fx:id="gradyear" layoutX="210.0" layoutY="795.0" prefWidth="400.0" promptText="---Mandatory---" />
+                        <Text layoutX="525.0" layoutY="875.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/" wrappingWidth="5.615234375">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="20.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="505.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="21.0" />
+                           </font>
+                        </Text>
+                        <VBox layoutX="50.0" layoutY="965.0">
+                           <children>
+                              <CheckBox fx:id="check1" mnemonicParsing="false" text="Are you applying for ECE PhD?">
+                                 <font>
+                                    <Font name="Georgia" size="15.0" />
+                                 </font></CheckBox>
+                              <CheckBox fx:id="check2" mnemonicParsing="false" text="Have you completed your Post Graduation?">
+                                 <font>
+                                    <Font name="Georgia" size="15.0" />
+                                 </font></CheckBox>
+                              <CheckBox fx:id="check3" mnemonicParsing="false" text="Other Academic Degrees?">
+                                 <font>
+                                    <Font name="Georgia" size="15.0" />
+                                 </font></CheckBox>
+                              <CheckBox fx:id="check4" mnemonicParsing="false" text="Taken GATE Exam?">
+                                 <font>
+                                    <Font name="Georgia" size="15.0" />
+                                 </font></CheckBox>
+                              <TitledPane fx:id="title1" animated="false" text="untitled">
+                                <content>
+                                  <AnchorPane>
+                                       <children>
+                                          <Text layoutX="20.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOTE: You are required to select 4 subjects if you are an under-graduate otherwise you need to fill 3.">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                             </font></Text>
+                                          <Label layoutX="20.0" layoutY="125.0" text="Preference 1*">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                             </font></Label>
+                                          <Label layoutX="20.0" layoutY="170.0" text="Preference 2*">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                             </font></Label>
+                                          <Label layoutX="20.0" layoutY="215.0" text="Preference 3*">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                             </font></Label>
+                                          <Label layoutX="20.0" layoutY="260.0" text="Preference 4">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                             </font></Label>
+                                          <Text layoutX="20.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ECE PhD Subject Preference" underline="true">
+                                             <font>
+                                                <Font name="Century" size="20.0" />
+                                             </font></Text>
+                                          <ComboBox fx:id="ece_pref1" layoutX="150.0" layoutY="120.0" prefWidth="400.0" promptText="---Mandatory---" />
+                                          <ComboBox fx:id="ece_pref2" layoutX="150.0" layoutY="165.0" prefWidth="400.0" promptText="---Mandatory---" />
+                                          <ComboBox fx:id="ece_pref3" layoutX="150.0" layoutY="210.0" prefWidth="400.0" promptText="---Mandatory---" />
+                                          <ComboBox fx:id="ece_pref4" layoutX="150.0" layoutY="255.0" prefWidth="400.0" promptText="---Please refer to above NOTE---" />
+                                          <Text fx:id="wrong29" fill="#c90505" layoutX="575.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                                          <Text fx:id="wrong30" fill="#c90505" layoutX="575.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                                          <Text fx:id="wrong31" fill="#c90505" layoutX="575.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </TitledPane>
+                              <TitledPane fx:id="title2" animated="false" text="untitled">
+                                <content>
+                                  <AnchorPane>
+                                       <children>
+                                          <Label layoutX="60.0" layoutY="80.0" text="Name of College*">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                             </font></Label>
+                                          <Label layoutX="131.0" layoutY="125.0" text="City*">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                             </font></Label>
+                                          <Label layoutX="121.0" layoutY="170.0" text="State*">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                             </font></Label>
+                                          <Label layoutX="20.0" layoutY="215.0" text="Department/Discipline*">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                             </font></Label>
+                                          <Label layoutX="106.0" layoutY="260.0" text="Degree*">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                             </font></Label>
+                                          <Label layoutX="81.0" layoutY="305.0" text="Thesis Title*">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                             </font></Label>
+                                          <Label layoutX="77.0" layoutY="350.0" text="Year of Post-">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                             </font></Label>
+                                          <Label layoutX="80.0" layoutY="371.0" text="Graduation*">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                             </font></Label>
+                                          <Label layoutX="109.0" layoutY="415.0" text="Marks*">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                             </font></Label>
+                                          <TextField fx:id="pgcollege" layoutX="190.0" layoutY="75.0" prefHeight="25.0" prefWidth="360.0" />
+                                          <TextField fx:id="pgcity" layoutX="190.0" layoutY="120.0" prefHeight="25.0" prefWidth="360.0" />
+                                          <TextField fx:id="pgthesis" layoutX="190.0" layoutY="300.0" prefWidth="360.0" />
+                                          <Text layoutX="20.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Post - Graduation Information" underline="true">
+                                             <font>
+                                                <Font name="Century" size="20.0" />
+                                             </font></Text>
+                                          <RadioButton fx:id="pgcgpa" layoutX="190.0" layoutY="415.0" mnemonicParsing="false" onAction="#pgcgpaonAction" text="CGPA">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="pgmarks" />
+                                             </toggleGroup>
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <RadioButton fx:id="pgpercentage" layoutX="190.0" layoutY="460.0" mnemonicParsing="false" onAction="#pgpercentageonAction" text="Percentage" toggleGroup="$pgmarks">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                             </font></RadioButton>
+                                          <TextField fx:id="pgmark1" layoutX="300.0" layoutY="410.0" promptText="Upto 2 decimal places" />
+                                          <TextField fx:id="pgmark2" layoutX="300.0" layoutY="455.0" promptText="Upto 2 decimal places" />
+                                          <Text layoutX="465.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="19.0" />
+                                             </font></Text>
+                                          <ComboBox fx:id="pgstate" layoutX="190.0" layoutY="165.0" prefWidth="360.0" promptText="---Mandatory---" />
+                                          <ComboBox fx:id="pgyear" layoutX="190.0" layoutY="355.0" prefWidth="360.0" promptText="---Mandatory---" />
+                                          <ComboBox fx:id="outof3" layoutX="492.0" layoutY="410.0" prefHeight="25.0" prefWidth="58.0" promptText="4" />
+                                          <ComboBox fx:id="pgdiscipline" layoutX="190.0" layoutY="210.0" prefHeight="25.0" prefWidth="360.0" promptText="---Mandatory---" />
+                                          <ComboBox fx:id="pgdegree" layoutX="190.0" layoutY="255.0" prefHeight="25.0" prefWidth="360.0" promptText="---Mandatory---" />
+                                          <Text fx:id="wrong32" fill="#c90505" layoutX="575.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                                          <Text fx:id="wrong33" fill="#c90505" layoutX="575.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                                          <Text fx:id="wrong34" fill="#c90505" layoutX="575.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                                          <Text fx:id="wrong35" fill="#c90505" layoutX="575.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                                          <Text fx:id="wrong36" fill="#c90505" layoutX="575.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                                          <Text fx:id="wrong37" fill="#c90505" layoutX="575.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                                          <Text fx:id="wrong38" fill="#c90505" layoutX="575.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                                          <Text fx:id="wrong39" fill="#c90505" layoutX="575.0" layoutY="428.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </TitledPane>
+                              <TitledPane fx:id="title3" animated="false" text="untitled">
+                                 <content>
+                                    <AnchorPane>
+                                       <children>
+                                          <Text layoutX="20.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Other Academic Degrees" underline="true">
+                                             <font>
+                                                <Font name="Century" size="20.0" />
+                                             </font></Text>
+                                          <Label layoutX="20.0" layoutY="80.0" text="Exam Name*">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                             </font></Label>
+                                          <Label layoutX="43.0" layoutY="125.0" text="Subject*">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                             </font></Label>
+                                          <Label layoutX="58.0" layoutY="170.0" text="Year*">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                             </font></Label>
+                                          <Label layoutX="49.0" layoutY="214.0" text="Score*">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                             </font></Label>
+                                          <Label layoutX="55.0" layoutY="260.0" text="Rank">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                             </font></Label>
+                                          <TextField fx:id="otherexam" layoutX="150.0" layoutY="75.0" prefWidth="400.0" />
+                                          <TextField fx:id="othersubject" layoutX="150.0" layoutY="120.0" prefWidth="400.0" />
+                                          <TextField fx:id="otherrank" layoutX="150.0" layoutY="255.0" prefWidth="400.0" />
+                                          <TextField fx:id="otherscore" layoutX="150.0" layoutY="210.0" prefWidth="400.0" />
+                                          <ComboBox fx:id="otheryear" layoutX="150.0" layoutY="165.0" prefHeight="25.0" prefWidth="400.0" promptText="---Mandatory---" />
+                                          <Text fx:id="wrong40" fill="#c90505" layoutX="575.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                                          <Text fx:id="wrong41" fill="#c90505" layoutX="575.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                                          <Text fx:id="wrong42" fill="#c90505" layoutX="575.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                                          <Text fx:id="wrong43" fill="#c90505" layoutX="575.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane fx:id="title4" animated="false" text="untitled">
+                                 <content>
+                                    <AnchorPane>
+                                       <children>
+                                          <Text layoutX="20.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gate" underline="true">
+                                             <font>
+                                                <Font name="Century" size="20.0" />
+                                             </font></Text>
+                                          <Label layoutX="103.0" layoutY="80.0" text="Area*">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                             </font></Label>
+                                          <Label layoutX="20.0" layoutY="125.0" text="Year of Graduation*">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                             </font></Label>
+                                          <Label layoutX="25.0" layoutY="170.0" text="Marks(Out of 100)*">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                             </font></Label>
+                                          <Label layoutX="92.0" layoutY="215.0" text="Score*">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                             </font></Label>
+                                          <Label layoutX="98.0" layoutY="260.0" text="Rank">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                             </font></Label>
+                                          <TextField fx:id="gatearea" layoutX="150.0" layoutY="75.0" prefWidth="400.0" />
+                                          <TextField fx:id="gatemark" layoutX="150.0" layoutY="165.0" prefWidth="400.0" />
+                                          <TextField fx:id="gatescore" layoutX="150.0" layoutY="210.0" prefWidth="400.0" />
+                                          <TextField fx:id="gaterank" layoutX="150.0" layoutY="255.0" prefWidth="400.0" />
+                                          <ComboBox fx:id="gateyear" layoutX="150.0" layoutY="120.0" prefHeight="25.0" prefWidth="400.0" promptText="---Mandatory---" />
+                                          <Text fx:id="wrong44" fill="#c90505" layoutX="575.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                                          <Text fx:id="wrong45" fill="#c90505" layoutX="575.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                                          <Text fx:id="wrong46" fill="#c90505" layoutX="575.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                                          <Text fx:id="wrong47" fill="#c90505" layoutX="575.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <AnchorPane prefHeight="581.0" prefWidth="626.0">
+                                 <children>
+                                    <Text layoutX="20.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Achievements, CV and Statement of Purpose" underline="true">
+                                       <font>
+                                          <Font name="Century" size="20.0" />
+                                       </font>
+                                    </Text>
+                                    <Label layoutX="38.0" layoutY="90.0" text="Achievements (Other ">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="30.0" layoutY="105.0" text="information like ranks, ">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="89.0" layoutY="120.0" text="medals etc.)">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="82.0" layoutY="235.0" text="CV/Resume*">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextArea fx:id="achievement" layoutX="225.0" layoutY="90.0" prefHeight="110.0" prefWidth="330.0" />
+                                    <Label layoutX="23.0" layoutY="320.0" text="Statement of Purpose*">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Button layoutX="225.0" layoutY="315.0" mnemonicParsing="false" onAction="#uploadPurpose" prefHeight="25.0" prefWidth="88.0" text="Choose File">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="225.0" layoutY="230.0" mnemonicParsing="false" onAction="#uploadCV" prefHeight="25.0" prefWidth="91.0" text="Choose File">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Text fx:id="nofile1" layoutX="333.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No File Chosen">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="nofile2" layoutX="333.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No File Chosen">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="225.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Upload a pdf file of max 10 MB">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="225.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Upload a pdf file of max 10 MB">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <Button layoutX="225.0" layoutY="467.0" mnemonicParsing="false" onAction="#save2onAction" text="Save">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Text fill="#2b00ff" layoutX="225.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note: Fields marked as * are mandatory">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="prompt2" layoutX="225.0" layoutY="541.0" strokeType="OUTSIDE" strokeWidth="0.0" visible="false">
+                                       <font>
+                                          <Font name="Georgia" size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="wrong48" fill="#c90505" layoutX="575.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                                    <Text fx:id="wrong49" fill="#c90505" layoutX="575.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                                    <Text fx:id="wrong50" fill="#c90505" layoutX="575.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                                    <Text fx:id="success1" fill="#10970e" layoutX="466.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Successfully Uploaded" visible="false" wrappingWidth="137.13671875">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="success2" fill="#10970e" layoutX="466.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Successfully Uploaded" visible="false" wrappingWidth="137.13671875">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                        <ComboBox layoutX="210.0" layoutY="80.0" prefHeight="25.0" prefWidth="403.0" promptText="---Mandatory---" fx:id="xboard" />
+                        <ComboBox layoutX="209.0" layoutY="270.0" prefHeight="25.0" prefWidth="403.0" promptText="---Mandatory---" fx:id="xiiboard" />
+                        <ComboBox fx:id="discipline" layoutX="211.0" layoutY="540.0" prefHeight="25.0" prefWidth="403.0" promptText="---Mandatory---" />
+                        <ComboBox fx:id="degree" layoutX="211.0" layoutY="490.0" prefHeight="25.0" prefWidth="403.0" promptText="---Mandatory---" />
+                        <Text fx:id="wrong15" fill="#c90505" layoutX="631.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <Text fx:id="wrong16" fill="#c90505" layoutX="631.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <Text fx:id="wrong17" fill="#c90505" layoutX="631.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <Text fx:id="wrong18" fill="#c90505" layoutX="631.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <Text fx:id="wrong19" fill="#c90505" layoutX="631.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <Text fx:id="wrong20" fill="#c90505" layoutX="631.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <Text fx:id="wrong21" fill="#c90505" layoutX="631.0" layoutY="507.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <Text fx:id="wrong22" fill="#c90505" layoutX="631.0" layoutY="557.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <Text fx:id="wrong23" fill="#c90505" layoutX="631.0" layoutY="607.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <Text fx:id="wrong24" fill="#c90505" layoutX="631.0" layoutY="657.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <Text fx:id="wrong25" fill="#c90505" layoutX="631.0" layoutY="707.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <Text fx:id="wrong26" fill="#c90505" layoutX="631.0" layoutY="757.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <Text fx:id="wrong27" fill="#c90505" layoutX="631.0" layoutY="812.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                        <Text fx:id="wrong28" fill="#c90505" layoutX="631.0" layoutY="872.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid or Empty field" visible="false" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </content></Tab>
+      <Tab text="Payment Information" />
+      <Tab text="Feedback">
+         <content>
+            <ScrollPane hbarPolicy="NEVER">
+               <content>
+                  <AnchorPane prefHeight="945.0">
+                     <children>
+                        <Label layoutX="30.0" layoutY="30.0" text="How did you first hear ">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="45.0" layoutY="50.0" text="about the IIIT-Delhi ">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="65.0" layoutY="70.0" text="PhD program?*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <RadioButton layoutX="200.0" layoutY="30.0" mnemonicParsing="false" text="Advertisement in the Dainik Jagran">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="feedback" />
+                           </toggleGroup>
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton layoutX="200.0" layoutY="60.0" mnemonicParsing="false" text="Advertisement in the Hindu" toggleGroup="$feedback">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton layoutX="200.0" layoutY="120.0" mnemonicParsing="false" text="PhD flier" toggleGroup="$feedback">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton layoutX="200.0" layoutY="150.0" mnemonicParsing="false" text="IIIT-Delhi Website" toggleGroup="$feedback">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton layoutX="200.0" layoutY="180.0" mnemonicParsing="false" text="Other Website" toggleGroup="$feedback">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton layoutX="200.0" layoutY="210.0" mnemonicParsing="false" text="Talk/Presentation" toggleGroup="$feedback">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton layoutX="200.0" layoutY="240.0" mnemonicParsing="false" text="College/Teacher/Academic relation" toggleGroup="$feedback">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton layoutX="200.0" layoutY="270.0" mnemonicParsing="false" text="Friend/Family/Personal relation" toggleGroup="$feedback">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton layoutX="200.0" layoutY="300.0" mnemonicParsing="false" text="Other(s)" toggleGroup="$feedback">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton layoutX="200.0" layoutY="90.0" mnemonicParsing="false" text="Advertisement in the Hindustan Times" toggleGroup="$feedback">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </RadioButton>
+                        <TextField layoutX="350.0" layoutY="175.0" prefHeight="25.0" prefWidth="300.0" promptText="Please mention website name" />
+                        <TextArea layoutX="350.0" layoutY="300.0" prefHeight="100.0" prefWidth="300.0" promptText="Please mention the other source(s)" />
+                        <Label layoutX="30.0" layoutY="450.0" text="Why are you interested ">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="50.0" layoutY="470.0" text="in the IIIT-Delhi PhD ">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="100.0" layoutY="490.0" text="program?*">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <CheckBox layoutX="200.0" layoutY="450.0" mnemonicParsing="false" text="Faculty profile">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox layoutX="200.0" layoutY="510.0" mnemonicParsing="false" text="Collaborative PhD program">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox layoutX="200.0" layoutY="540.0" mnemonicParsing="false" text="Sponsored PhD program">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox layoutX="200.0" layoutY="570.0" mnemonicParsing="false" text="No GATE requirement">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox layoutX="200.0" layoutY="600.0" mnemonicParsing="false" text="Attractive stipend and other benefits">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox layoutX="200.0" layoutY="629.0" mnemonicParsing="false" text="Located in Delhi">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox layoutX="200.0" layoutY="660.0" mnemonicParsing="false" text="May not get into IIT">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox layoutX="200.0" layoutY="690.0" mnemonicParsing="false" text="I want to do PhD. IIIT-Delhi is one good option">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox layoutX="200.0" layoutY="720.0" mnemonicParsing="false" text="Other(s)">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox layoutX="200.0" layoutY="480.0" mnemonicParsing="false" text="Aligned research area/research projects">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </CheckBox>
+                        <TextArea layoutX="350.0" layoutY="720.0" prefHeight="100.0" prefWidth="300.0" promptText="Please mention the other source(s)" />
+                        <Button layoutX="200.0" layoutY="900.0" mnemonicParsing="false" text="Save">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </content>
+      </Tab>
+      <Tab onSelectionChanged="#tab5selected" text="Submit">
+         <content>
+            <AnchorPane>
+               <children>
+                  <Text fill="#1a9405" layoutX="30.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please complete and save all the fields before you click the submit button." wrappingWidth="726.181640625">
+                     <font>
+                        <Font name="Georgia" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#1a9405" layoutX="30.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Once you have submitted you will not be able to edit any field.">
+                     <font>
+                        <Font name="Georgia" size="20.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="submit" layoutX="30.0" layoutY="120.0" mnemonicParsing="false" onAction="#submitonAction" text="Submit">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Text fill="#ff0e0e" layoutX="30.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Submit button will appear only when all the previous tabs are successfully filled">
+                     <font>
+                        <Font name="Georgia" size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+   </tabs>
+</TabPane>
