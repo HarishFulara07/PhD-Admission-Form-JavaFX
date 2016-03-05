@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AdminController">
+   <children>
+      <SplitPane dividerPositions="0.09410430839002268" orientation="VERTICAL">
+         <items>
+            <AnchorPane prefHeight="20.0" prefWidth="100.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="439.0" layoutY="21.0" prefHeight="49.0" prefWidth="229.0" text="Filter Entries" textFill="#49ada8">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane>
+               <children>
+                  <TabPane prefHeight="800.0" prefWidth="1202.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <tabs>
+                        <Tab fx:id="admin_tab1" closable="false" onSelectionChanged="#tab1selected" text="Personal Information">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0">
+                                 <opaqueInsets>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </opaqueInsets>
+                                 <children>
+                                    <Label layoutX="141.0" layoutY="67.0" text="Email" textFill="#3fada8">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="140.0" layoutY="123.0" text="Name" textFill="#3fada8">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="141.0" layoutY="181.0" text="Enrollment Number" textFill="#3fada8">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="140.0" layoutY="239.0" text="Category" textFill="#3fada8">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="135.0" layoutY="301.0" text="Gender" textFill="#3fada8">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="137.0" layoutY="353.0" text="Physically Disabled" textFill="#3fada8">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="135.0" layoutY="406.0" text="Date of  Birth" textFill="#3fada8">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="admin_email" layoutX="334.0" layoutY="63.0" prefHeight="26.0" prefWidth="350.0" />
+                                    <TextField fx:id="admin_name" layoutX="334.0" layoutY="120.0" prefHeight="26.0" prefWidth="349.0" />
+                                    <TextField fx:id="admin_enrollmentno" layoutX="333.0" layoutY="178.0" prefHeight="26.0" prefWidth="350.0" />
+                                    <ComboBox fx:id="admin_category" layoutX="335.0" layoutY="236.0" prefHeight="26.0" prefWidth="349.0" promptText="All" />
+                                    <RadioButton fx:id="admin_male_radioButton" layoutX="334.0" layoutY="302.0" mnemonicParsing="false" text="Male">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="admin_gender_ToggleGroup" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="admin_female_radioButton" layoutX="472.0" layoutY="302.0" mnemonicParsing="false" text="Female" toggleGroup="$admin_gender_ToggleGroup" />
+                                    <RadioButton fx:id="admin_pdYes_radioButton" layoutX="331.0" layoutY="354.0" mnemonicParsing="false" text="Yes">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="admin_pd_ToggleGroup" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="admin_pdNo_radioButton" layoutX="472.0" layoutY="354.0" mnemonicParsing="false" text="No" toggleGroup="$admin_pd_ToggleGroup" />
+                                    <DatePicker fx:id="admin_dob_DatePicker" layoutX="331.0" layoutY="471.0" prefHeight="26.0" prefWidth="350.0" />
+                                    <RadioButton fx:id="admin_dobBefore_radioButton" layoutX="329.0" layoutY="407.0" mnemonicParsing="false" text="Before">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="admin_dob_ToggleGroup" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="admin_dobOn_radioButton" layoutX="472.0" layoutY="407.0" mnemonicParsing="false" text="On" toggleGroup="$admin_dob_ToggleGroup" />
+                                    <RadioButton fx:id="admin_dobafter_radioButton" layoutX="612.0" layoutY="407.0" mnemonicParsing="false" text="After" toggleGroup="$admin_dob_ToggleGroup" />
+                                    <Label fx:id="admin_dob_errorLabel" alignment="TOP_LEFT" layoutX="326.0" layoutY="510.0" prefHeight="61.0" prefWidth="355.0" text="This field is required when selecting the DOB RadioButtons." textFill="#e41111" visible="false">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="admin_tab2" closable="false" onSelectionChanged="#tab2selected" text="Education Information">
+                           <content>
+                              <ScrollPane prefViewportHeight="767.0" prefViewportWidth="1200.0">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="850.0" prefWidth="1200.0">
+                                       <opaqueInsets>
+                                          <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                       </opaqueInsets>
+                                       <children>
+                                          <Label layoutX="114.0" layoutY="59.0" text="PhD Stream" textFill="#3fada8">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="114.0" layoutY="90.0" text="Graduation Degree" textFill="#3fada8">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="114.0" layoutY="124.0" text="Post Graduation Degree" textFill="#3fada8">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="114.0" layoutY="158.0" text="Class X Board" textFill="#3fada8">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="114.0" layoutY="231.0" text="Department(Graduation)" textFill="#3fada8">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="admin_graduationState_Label" layoutX="110.0" layoutY="382.0" text="State(Graduation from)" textFill="#3fada8">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="admin_graduationUniversity_TextField" layoutX="399.0" layoutY="301.0" prefHeight="26.0" prefWidth="450.0" />
+                                          <ComboBox fx:id="admin_classXBoard_ComboBox" layoutX="399.0" layoutY="155.0" prefHeight="26.0" prefWidth="349.0" promptText="All" />
+                                          <ComboBox fx:id="admin_phdStream_ComboBox" layoutX="399.0" layoutY="55.0" prefHeight="26.0" prefWidth="349.0" promptText="All" />
+                                          <ComboBox fx:id="admin_postDegree_ComboBox" layoutX="399.0" layoutY="121.0" prefHeight="26.0" prefWidth="349.0" promptText="All" />
+                                          <ComboBox fx:id="admin_graduationDegree_ComboBox" layoutX="399.0" layoutY="87.0" prefHeight="26.0" prefWidth="349.0" promptText="All" />
+                                          <ComboBox fx:id="admin_postGraduationDepartment_ComboBox" layoutX="399.0" layoutY="265.0" prefHeight="26.0" prefWidth="349.0" promptText="All" />
+                                          <ComboBox fx:id="admin_graduationDepartment_ComboBox" layoutX="399.0" layoutY="227.0" prefHeight="26.0" prefWidth="349.0" promptText="All" />
+                                          <ComboBox fx:id="admin_classXIIBoard_ComboBox" layoutX="399.0" layoutY="192.0" prefHeight="26.0" prefWidth="349.0" promptText="All" />
+                                          <Label layoutX="115.0" layoutY="196.0" text="Class XII Board" textFill="#3fada8">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="112.0" layoutY="269.0" text="Department(Post Graduation)" textFill="#3fada8">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="112.0" layoutY="305.0" text="University(Graduation)" textFill="#3fada8">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="112.0" layoutY="343.0" text="University(Post Graduation)" textFill="#3fada8">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="admin_postGraduationUniversity_TextField" layoutX="399.0" layoutY="340.0" prefHeight="26.0" prefWidth="450.0" />
+                                          <ComboBox fx:id="admin_graduationState_ComboBox" layoutX="399.0" layoutY="379.0" prefHeight="26.0" prefWidth="349.0" promptText="All" />
+                                          <Label layoutX="110.0" layoutY="419.0" text="State(Post Graduation from)" textFill="#3fada8">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="admin_postGraduationState_ComboBox" layoutX="399.0" layoutY="416.0" prefHeight="26.0" prefWidth="349.0" promptText="All" />
+                                          <Label layoutX="108.0" layoutY="457.0" text="Class X Board Percentage" textFill="#3fada8">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <CheckBox fx:id="admin_greaterThanXBoardPercentage_CheckBox" layoutX="399.0" layoutY="457.0" mnemonicParsing="false" text="Greater than" />
+                                          <CheckBox fx:id="admin_equalsXBoardPercentage_CheckBox" layoutX="528.0" layoutY="457.0" mnemonicParsing="false" text="Equals" />
+                                          <CheckBox fx:id="admin_lesserThanXBoardPercentage_CheckBox" layoutX="630.0" layoutY="457.0" mnemonicParsing="false" text="Lesser Than" />
+                                          <TextField fx:id="admin_XBoardPercentage_TextField" layoutX="761.0" layoutY="453.0" prefHeight="26.0" prefWidth="87.0" promptText="Percent" />
+                                          <Label layoutX="112.0" layoutY="496.0" text="Class XII Board Percentage" textFill="#3fada8">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <CheckBox fx:id="admin_greaterThanPostGraduationPercentage_CheckBox" layoutX="399.0" layoutY="581.0" mnemonicParsing="false" text="Greater than" />
+                                          <CheckBox fx:id="admin_equalsXIIBoardPercentage_CheckBox" layoutX="528.0" layoutY="496.0" mnemonicParsing="false" text="Equals" />
+                                          <CheckBox fx:id="admin_lesserThanXIIBoardPercentage_CheckBox" layoutX="630.0" layoutY="496.0" mnemonicParsing="false" text="Lesser Than" />
+                                          <CheckBox fx:id="admin_greaterThanXIIBoardPercentage_CheckBox" layoutX="399.0" layoutY="496.0" mnemonicParsing="false" text="Greater than" />
+                                          <CheckBox fx:id="admin_greaterThanGraduationPercentage_CheckBox" layoutX="399.0" layoutY="540.0" mnemonicParsing="false" text="Greater Than" />
+                                          <CheckBox fx:id="admin_equalsGraduationPercentage_CheckBox" layoutX="528.0" layoutY="540.0" mnemonicParsing="false" text="Equals" />
+                                          <CheckBox fx:id="admin_equalsPostGraduationPercentage_CheckBox" layoutX="528.0" layoutY="581.0" mnemonicParsing="false" text="Equals" />
+                                          <CheckBox fx:id="admin_lesserThanGraduationPercentage_CheckBox" layoutX="630.0" layoutY="540.0" mnemonicParsing="false" text="Lesser Than" />
+                                          <CheckBox fx:id="admin_lesserThanPostGraduationPercentage_CheckBox" layoutX="630.0" layoutY="581.0" mnemonicParsing="false" text="Lesser Than" />
+                                          <TextField fx:id="admin_XIIBoardPercentage_TextField" layoutX="761.0" layoutY="492.0" prefHeight="26.0" prefWidth="87.0" promptText="Percent" />
+                                          <TextField fx:id="admin_graduationPercentage_TextField" layoutX="761.0" layoutY="536.0" prefHeight="26.0" prefWidth="87.0" promptText="Percent" />
+                                          <TextField fx:id="admin_postGraduationPercentage_TextField" layoutX="761.0" layoutY="577.0" prefHeight="26.0" prefWidth="87.0" promptText="Percent" />
+                                          <CheckBox fx:id="admin_greaterThanGateScore_CheckBox" layoutX="399.0" layoutY="624.0" mnemonicParsing="false" text="Greater than" />
+                                          <CheckBox fx:id="admin_equalsThanGateScore_CheckBox" layoutX="528.0" layoutY="624.0" mnemonicParsing="false" text="Equals" />
+                                          <CheckBox fx:id="admin_lesserThanGateScore_CheckBox" layoutX="630.0" layoutY="624.0" mnemonicParsing="false" text="Lesser Than" />
+                                          <TextField fx:id="admin_gateScore_TextField" layoutX="761.0" layoutY="620.0" prefHeight="26.0" prefWidth="87.0" promptText="Score" />
+                                          <Label layoutX="110.0" layoutY="540.0" text="Graduation Marks Percentage" textFill="#3fada8">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="108.0" layoutY="581.0" text="Post Graduation Marks Percentage" textFill="#3fada8">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="108.0" layoutY="624.0" text="GATE Score" textFill="#3fada8">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Text layoutX="110.0" layoutY="700.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+                                          <Label fx:id="tab2_uncheckXBoard" layoutX="870.0" layoutY="461.0" text="Boxes unchecked or invalid Percentage " textFill="#ee0a0a" visible="false">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="tab2_uncheckXIIBoard" layoutX="870.0" layoutY="500.0" text="Boxes unchecked or invalid Percentage " textFill="#ee0a0a" visible="false">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="tab2_uncheckGraduation" layoutX="870.0" layoutY="543.0" text="Boxes unchecked or invalid Percentage " textFill="#ee0a0a" visible="false">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="tab2_uncheckPGGraduation" layoutX="870.0" layoutY="585.0" text="Boxes unchecked or invalid Percentage " textFill="#ee0a0a" visible="false">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="tab2_uncheckGateScore" layoutX="870.0" layoutY="627.0" text="Boxes unchecked or invalid Percentage " textFill="#ee0a0a" visible="false">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="tab2_invalidXBoard" layoutX="870.0" layoutY="459.0" text="Enter valid Percentage" textFill="#f50f0f" visible="false">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="tab2_invalidXIIBoard" layoutX="870.0" layoutY="499.0" text="Enter valid Percentage" textFill="#f50f0f" visible="false">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="tab2_invalidGraduation" layoutX="870.0" layoutY="543.0" text="Enter valid Percentage" textFill="#f50f0f" visible="false">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="tab2_invalidPGGraduation" layoutX="870.0" layoutY="585.0" text="Enter valid Percentage" textFill="#f50f0f" visible="false">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="tab2_invalidGateScore" layoutX="870.0" layoutY="628.0" text="Enter valid Percentage" textFill="#f50f0f" visible="false">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </ScrollPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="admin_tab3" closable="false" onSelectionChanged="#tab3selected" text="Submit">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="141.0" layoutY="67.0" text="Application Dated From" textFill="#3fada8">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="140.0" layoutY="123.0" text="Application Dated Upto" textFill="#3fada8">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <DatePicker fx:id="admin_applicationDatedFrom_DatePicker" layoutX="377.0" layoutY="64.0" prefHeight="26.0" prefWidth="300.0" />
+                                    <DatePicker fx:id="admin_applicationDatedUpto_DatePicker" layoutX="377.0" layoutY="120.0" prefHeight="26.0" prefWidth="300.0" />
+                                    <Button fx:id="admin_filterButton" layoutX="140.0" layoutY="202.0" mnemonicParsing="false" onAction="#filterResult" prefHeight="26.0" prefWidth="139.0" text="Filter Result" />
+                                    <Label fx:id="futureDateError" layoutX="377.0" layoutY="155.0" text="Future date invalid" textFill="#f20f0f" visible="false">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="mainError" layoutX="140.0" layoutY="243.0" text="Inputs are invalid. Please look over all tabs to find the error" textFill="#ee0909" visible="false">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </opaqueInsets>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                    </tabs>
+                     <effect>
+                        <Reflection bottomOpacity="1.0" topOpacity="0.91" />
+                     </effect>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
